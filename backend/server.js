@@ -20,5 +20,5 @@ app.use('/api/company', require('./routes/comRoutes'));
 app.use('/api/job', require('./routes/jobRoutes'));
 app.use('/api/application', require('./routes/appRoutes'));
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 8000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
