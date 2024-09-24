@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './CSS/FormWithSearch.css';
 
 const FormWithSearch = () => {
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState(''); // State for search term
   const [image, setImage] = useState(null); // State to hold the uploaded image
-  
+
+  // Employee data
   const employees = [
     { name: "John Doe", designation: "Software Engineer", location: "New York", date: "2024-09-22" },
     { name: "Jane Smith", designation: "Product Manager", location: "Los Angeles", date: "2024-08-10" },
@@ -20,27 +21,38 @@ const FormWithSearch = () => {
     { name: "Mia Taylor", designation: "Business Analyst", location: "Atlanta", date: "2024-02-14" },
   ];
 
+  // Filtering employees based on search input
   const filteredEmployees = employees.filter(employee => 
     employee.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
     employee.designation.toLowerCase().includes(searchTerm.toLowerCase()) ||
     employee.location.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  // Handle image upload
+  // Handle image upload and save to localStorage
   const handleImageUpload = (event) => {
     const file = event.target.files[0];
     if (file) {
       const reader = new FileReader();
       reader.onloadend = () => {
-        setImage(reader.result);
+        const imageData = reader.result;
+        setImage(imageData);
+        localStorage.setItem('uploadedImage', imageData);
       };
       reader.readAsDataURL(file);
     }
   };
 
+  // Retrieve image from localStorage when the component mounts
+  useEffect(() => {
+    const storedImage = localStorage.getItem('uploadedImage');
+    if (storedImage) {
+      setImage(storedImage);
+    }
+  }, []);
+
   return (
     <div className="container">
-      {/* Search bar at the top */}
+      {/* Search bar */}
       <div className="search-bar">
         <input
           type="text"
@@ -54,10 +66,8 @@ const FormWithSearch = () => {
       {/* Section with left content and right image */}
       <div className="content-section">
         <div className="left-content">
-          <h2>Welcome Back Sara</h2>
-          <p>You have new applications. It is a lot of work for today!
-            <br />So let's start.</p>
-          {/* Image Upload Input */}
+          <h2>Welcome Back Dear</h2>
+          <p>You have new applications. It is a lot of work for today!<br />So let's start.</p>
           <input
             type="file"
             accept="image/*"
@@ -70,14 +80,14 @@ const FormWithSearch = () => {
           {image ? (
             <img src={image} alt="Uploaded" className="content-image"/>
           ) : (
-            <img src="frontend\src\images" alt="Image of Employeer" className="content-image"/>
+            <img src="frontend/src/images" alt="Image of Employer" className="content-image"/>
           )}
         </div>
       </div>
 
       {/* Table with employee details */}
       <div className="table-section">
-        <h2>Employee Details</h2>
+        <h2>Job Seeker Details</h2>
         <div className="table-container">
           <table className="employee-table">
             <thead>
