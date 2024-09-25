@@ -1,13 +1,21 @@
 import React from 'react';
 import Login from './Modules/Login'; // Adjust this path if necessary
 import EmployeeDash from './Modules/EmployeeDash';
-
+import CompData from './Modules/CompData';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from "react-router-dom";
 const App = () => {
   return (
-    <div>
-  
-      <EmployeeDash/> 
-    </div>
+      <Router>
+        <Routes>
+          <Route path="/compdata" element={<CompData/>}/>
+          <Route path="/" element={<EmployeeDash/>}/>
+        </Routes>
+      </Router>
+      
   );
 };
 

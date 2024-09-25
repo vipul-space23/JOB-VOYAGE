@@ -1,0 +1,192 @@
+/* Container for everything */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Search bar and buttons */
+.search-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.search-input {
+  padding: 10px;
+  width: 60%;
+  max-width: 600px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.search-button {
+  padding: 10px 20px;
+  margin-left: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.search-button:hover {
+  background-color: #0056b3;
+}
+
+.add-company-button {
+  padding: 10px 20px;
+  margin-left: 10px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.add-company-button:hover {
+  background-color: #218838;
+}
+
+/* Flexbox container for content section */
+.content-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.left-content {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.left-content h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.left-content p {
+  font-size: 16px;
+  color: #666;
+}
+
+.right-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.content-image {
+  max-width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+  min-height: 200px; /* Ensure a minimum height for the image */
+  background-color: #eaeaea; /* Background for image placeholder */
+}
+
+/* Table section */
+.table-section {
+  margin-top: 20px;
+}
+
+.table-container {
+  max-height: 300px;
+  overflow-y: auto; /* Allows scrolling for table body */
+  border-radius: 8px;
+}
+
+/* Sticky header for the table */
+.employee-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.employee-table th, .employee-table td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: left;
+  margin: 0; /* Remove margin to prevent overlap */
+}
+
+.employee-table th {
+  background-color: #007bff;
+  color: white;
+  position: sticky;
+  top: 0; /* Makes the header stick at the top when scrolling */
+  z-index: 1; /* Ensure it stays above the table content */
+  box-shadow: 0 2px 2px -2px gray; /* Optional: Add shadow to the sticky header */
+}
+
+.employee-table td {
+  background-color: #f4f4f4;
+}
+
+/* Button for editing */
+.employee-table td button {
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-right: 5px; /* Space between buttons */
+}
+
+.edit-button {
+  background-color: #67dd00; /* Yellow background for edit button */
+  color: white;
+}
+
+.edit-button:hover {
+  background-color: #55b600; /* Darker yellow on hover */
+}
+
+.delete-button {
+  background-color: #dc3545; /* Red background for delete button */
+  color: white;
+}
+
+.delete-button:hover {
+  background-color: #c82333; /* Darker red on hover */
+}
+
+/* Scrollbar styling (optional) */
+.table-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+  background-color: #007bff;
+  border-radius: 4px;
+}
+
+.table-container::-webkit-scrollbar-track {
+  background-color: #f4f4f4;
+}
+
+.image-upload {
+  margin-top: 10px;
+  padding: 5px;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .content-section {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .right-content {
+    margin-top: 20px;
+  }
+
+  .search-input {
+    width: 100%;
+  }
+}

@@ -12,6 +12,7 @@ exports.register = async (req, res) => {
                 success: false
             });
         };
+        
         const user = await User.findOne({ email });
         if (user) {
             return res.status(400).json({

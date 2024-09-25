@@ -1,31 +1,33 @@
 import React, { useState, useEffect } from 'react';
-import './CSS/FormWithSearch.css';
+import './CSS/EmployeeDash.css';
+import { useNavigate } from 'react-router-dom';
 
 const FormWithSearch = () => {
   const [searchTerm, setSearchTerm] = useState(''); // State for search term
   const [image, setImage] = useState(null); // State to hold the uploaded image
+  const navigate = useNavigate();
 
-  // Employee data
-  const employees = [
-    { name: "John Doe", designation: "Software Engineer", location: "New York", date: "2024-09-22" },
-    { name: "Jane Smith", designation: "Product Manager", location: "Los Angeles", date: "2024-08-10" },
-    { name: "Emily Johnson", designation: "UX Designer", location: "San Francisco", date: "2024-07-15" },
-    { name: "Michael Brown", designation: "Data Scientist", location: "Chicago", date: "2023-12-05" },
-    { name: "Sarah Williams", designation: "HR Manager", location: "Boston", date: "2024-03-20" },
-    { name: "David Lee", designation: "Frontend Developer", location: "Seattle", date: "2024-06-30" },
-    { name: "Alice Carter", designation: "Project Manager", location: "Denver", date: "2024-01-10" },
-    { name: "Olivia Adams", designation: "Marketing Specialist", location: "Miami", date: "2024-05-12" },
-    { name: "James Wilson", designation: "DevOps Engineer", location: "Austin", date: "2024-08-18" },
-    { name: "Isabella Clark", designation: "QA Engineer", location: "Dallas", date: "2024-04-22" },
-    { name: "William Scott", designation: "Backend Developer", location: "Philadelphia", date: "2024-07-25" },
-    { name: "Mia Taylor", designation: "Business Analyst", location: "Atlanta", date: "2024-02-14" },
-  ];
+  // Company data
+  const [companies, setCompanies] = useState([
+    { name: "Tata Consultancy Services", designation: "Software Engineer", location: "Mumbai", date: "2024-09-22"},
+    { name: "Infosys", designation: "Product Manager", location: "Bangalore", date: "2024-08-10"},
+    { name: "Wipro", designation: "UX Designer", location: "Hyderabad", date: "2024-07-15"},
+    { name: "HCL Technologies", designation: "Data Scientist", location: "Noida", date: "2023-12-05"},
+    { name: "Tech Mahindra", designation: "HR Manager", location: "Pune", date: "2024-03-20" },
+    { name: "Mindtree", designation: "Frontend Developer", location: "Chennai", date: "2024-06-30"},
+    { name: "L&T Infotech", designation: "Project Manager", location: "Mumbai", date: "2024-01-10" },
+    { name: "Mphasis", designation: "Marketing Specialist", location: "Bangalore", date: "2024-05-12"},
+    { name: "Cognizant", designation: "DevOps Engineer", location: "Kolkata", date: "2024-08-18" },
+    { name: "Accenture", designation: "QA Engineer", location: "Gurgaon", date: "2024-04-22" },
+    { name: "Zensar Technologies", designation: "Backend Developer", location: "Pune", date: "2024-07-25"},
+    { name: "TCS Digital", designation: "Business Analyst", location: "Hyderabad", date: "2024-02-14"},
+  ]);
 
-  // Filtering employees based on search input
-  const filteredEmployees = employees.filter(employee => 
-    employee.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    employee.designation.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    employee.location.toLowerCase().includes(searchTerm.toLowerCase())
+  // Filtering companies based on search input
+  const filteredCompanies = companies.filter(company =>
+    company.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    company.designation.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    company.location.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   // Handle image upload and save to localStorage
@@ -50,9 +52,16 @@ const FormWithSearch = () => {
     }
   }, []);
 
+  // Function to handle deleting a company
+  const handleDelete = (index) => {
+    const updatedCompanies = companies.filter((_, i) => i !== index);
+    setCompanies(updatedCompanies);
+  };
+  const handleNavigate = ()=> navigate("/compdata");
+
   return (
     <div className="container">
-      {/* Search bar */}
+      {/* Search bar and buttons */}
       <div className="search-bar">
         <input
           type="text"
@@ -61,6 +70,8 @@ const FormWithSearch = () => {
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
+        <button className="search-button">Search</button>
+        <button className="add-company-button" onClick={handleNavigate}>Add Job Posting</button>
       </div>
 
       {/* Section with left content and right image */}
@@ -78,33 +89,38 @@ const FormWithSearch = () => {
         <div className="right-content">
           {/* Display the uploaded image or a placeholder */}
           {image ? (
-            <img src={image} alt="Uploaded" className="content-image"/>
+            <img src={image} alt="Uploaded" className="content-image" />
           ) : (
-            <img src="frontend/src/images" alt="Image of Employer" className="content-image"/>
+            <img src="frontend/src/images/placeholder.jpg" alt="Image of Employer" className="content-image" />
           )}
         </div>
       </div>
 
-      {/* Table with employee details */}
+      {/* Table with company details */}
       <div className="table-section">
-        <h2>Job Seeker Details</h2>
+        <h2>Job Postings</h2>
         <div className="table-container">
           <table className="employee-table">
-            <thead>
+            <thead className='table_header'>
               <tr>
-                <th>Full Name</th>
+                <th>Company Name</th>
                 <th>Designation</th>
                 <th>Location</th>
                 <th>Date</th>
+                <th>Actions</th> {/* Added Actions column */}
               </tr>
             </thead>
             <tbody>
-              {filteredEmployees.map((employee, index) => (
+              {filteredCompanies.map((company, index) => (
                 <tr key={index}>
-                  <td>{employee.name}</td>
-                  <td>{employee.designation}</td>
-                  <td>{employee.location}</td>
-                  <td>{employee.date}</td>
+                  <td>{company.name}</td>
+                  <td>{company.designation}</td>
+                  <td>{company.location}</td>
+                  <td>{company.date}</td>
+                  <td>
+                    <button className="edit-button">Edit</button> {/* Edit Button */}
+                    <button className="delete-button" onClick={() => handleDelete(index)}>Delete</button> {/* Delete Button */}
+                  </td>
                 </tr>
               ))}
             </tbody>
