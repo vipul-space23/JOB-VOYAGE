@@ -120,6 +120,7 @@ const FormWithSearch = () => {
                   <td>
                     <button className="edit-button">Edit</button> {/* Edit Button */}
                     <button className="delete-button" onClick={() => handleDelete(index)}>Delete</button> {/* Delete Button */}
+                    
                   </td>
                 </tr>
               ))}

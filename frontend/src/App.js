@@ -2,6 +2,8 @@ import React from 'react';
 import Login from './Modules/Login'; // Adjust this path if necessary
 import EmployeeDash from './Modules/EmployeeDash';
 import CompData from './Modules/CompData';
+import Jobclick from './Modules/JobClick';
+import JobPosting from './Modules/JobForm';
 import {
   BrowserRouter as Router,
   Routes,
@@ -12,7 +14,8 @@ const App = () => {
       <Router>
         <Routes>
           <Route path="/compdata" element={<CompData/>}/>
-          <Route path="/" element={<EmployeeDash/>}/>
+          <Route path="/" element={<Jobclick/>}/>
+          <Route path="/Jobform" element={<JobPosting/>}/>
         </Routes>
       </Router>
       
