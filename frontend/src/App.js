@@ -14,8 +14,9 @@ const App = () => {
       <Router>
         <Routes>
           <Route path="/compdata" element={<CompData/>}/>
-          <Route path="/" element={<Jobclick/>}/>
+          <Route path="/jobclick" element={<Jobclick/>}/>
           <Route path="/Jobform" element={<JobPosting/>}/>
+          <Route path="/employdash" element={<EmployeeDash/>}/>
         </Routes>
       </Router>
       

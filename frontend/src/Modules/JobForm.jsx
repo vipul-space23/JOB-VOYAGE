@@ -1,7 +1,6 @@
-// src/module/JobPosting.jsx
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './CSS/Jobformmod.css'
+import './CSS/Jobformmod.css';
 
 const JobPosting = () => {
   const [jobTitle, setJobTitle] = useState('');
@@ -12,21 +11,54 @@ const JobPosting = () => {
   const [jobType, setJobType] = useState('');
   const [experienceLevel, setExperienceLevel] = useState('');
   const [numberOfPositions, setNumberOfPositions] = useState('');
-  const navigate = useNavigate(); // Initialize useNavigate
+  const [message, setMessage] = useState(''); // Success or error message
+  
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  // Handle form submission
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    
+    const endpoint = 'http://localhost:5000/api/jobs'; // Adjust your API URL here
 
-    // You can handle the form submission logic here
-    // For example, sending the data to a server or API
+    // Prepare the job data
+    const jobData = {
+      jobTitle,
+      description,
+      requirements,
+      salary,
+      location,
+      jobType,
+      experienceLevel,
+      numberOfPositions
+    };
 
-    // Redirect to another page after submission
-    navigate('/'); // Redirecting to home page or any other route
+    try {
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(jobData) // Send the job data as JSON
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setMessage('Job posted successfully!');
+        navigate('/'); // Redirect to home page after successful submission
+      } else {
+        setMessage(`Error: ${data.message}`);
+      }
+    } catch (error) {
+      setMessage('Something went wrong!');
+    }
   };
 
   return (
     <div className="job-posting-container">
       <h2>Post a New Job</h2>
+      {message && <p>{message}</p>} {/* Display success/error message */}
       <form onSubmit={handleSubmit}>
         <div>
           <label>Job Title</label>
