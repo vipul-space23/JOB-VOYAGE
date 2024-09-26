@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
+const authenticate = require('./middleware/authenticate');
 require('dotenv').config();
 
 const app = express();
@@ -16,9 +17,9 @@ mongoose.connect(process.env.MONGO_URI, {
   .catch(err => console.log(err));
 
 app.use('/api/user', require('./routes/authRoutes'));
-app.use('/api/company', require('./routes/comRoutes'));
+app.use('/api/company',authenticate, require('./routes/comRoutes'));
 app.use('/api/job', require('./routes/jobRoutes'));
 app.use('/api/application', require('./routes/appRoutes'));
 
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
