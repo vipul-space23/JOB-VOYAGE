@@ -1,7 +1,7 @@
 // src/module/JobPosting.jsx
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './CSS/Jobposting.css'; // Ensure this path is correct
+import './CSS/Jobformmod.css'
 
 const JobPosting = () => {
   const [jobTitle, setJobTitle] = useState('');

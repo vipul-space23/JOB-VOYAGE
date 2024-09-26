@@ -1,0 +1,100 @@
+/* Container Styling */
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Form Title */
+  .container h2 {
+    text-align: center;
+    color: #007acc;
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  /* Message Display */
+  .container p {
+    text-align: center;
+    font-size: 14px;
+    color: green;
+    margin-bottom: 15px;
+  }
+  
+  /* Label Styling */
+  .container label {
+    display: block;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  /* Input, Textarea, and Select Styling */
+  .container input[type="text"],
+  .container input[type="url"],
+  .container input[type="file"],
+  .container textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    font-size: 14px;
+    background-color: #f9f9f9;
+    transition: border 0.3s ease-in-out;
+  }
+  
+  /* Textarea Specific Styling */
+  .container textarea {
+    resize: vertical;
+    height: 100px;
+  }
+  
+  /* Focus Effect for Inputs and Textareas */
+  .container input[type="text"]:focus,
+  .container input[type="url"]:focus,
+  .container textarea:focus,
+  .container input[type="file"]:focus {
+    outline: none;
+    border-color: #007acc;
+  }
+  
+  /* Submit Button Styling */
+  .container input[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #007acc;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .container input[type="submit"]:hover {
+    background-color: #005999;
+  }
+  
+  /* Media Queries for Responsiveness */
+  @media (max-width: 768px) {
+    .container {
+      padding: 15px;
+    }
+  
+    .container h2 {
+      font-size: 20px;
+    }
+  
+    .container input[type="submit"] {
+      font-size: 14px;
+    }
+  }
+  

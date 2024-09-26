@@ -1,0 +1,96 @@
+/* Container Styling */
+.job-posting-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Form Title */
+  .job-posting-container h2 {
+    text-align: center;
+    color: #007acc;
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  /* Label Styling */
+  .job-posting-container label {
+    display: block;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 5px;
+  }
+  
+  /* Input Styling */
+  .job-posting-container input[type="text"],
+  .job-posting-container input[type="number"],
+  .job-posting-container select,
+  .job-posting-container textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    font-size: 14px;
+    background-color: #f9f9f9;
+    transition: border 0.3s ease-in-out;
+  }
+  
+  /* Focus Effect for Inputs */
+  .job-posting-container input[type="text"]:focus,
+  .job-posting-container input[type="number"]:focus,
+  .job-posting-container select:focus,
+  .job-posting-container textarea:focus {
+    outline: none;
+    border-color: #007acc;
+  }
+  
+  /* Textarea Specific Styling */
+  .job-posting-container textarea {
+    resize: vertical;
+    height: 100px;
+  }
+  
+  /* Button Styling */
+  .job-posting-container button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #007acc;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .job-posting-container button:hover {
+    background-color: #005999;
+  }
+  
+  /* Form Fieldset Styling */
+  .job-posting-container div {
+    margin-bottom: 20px;
+  }
+  
+  /* Media Queries for Responsiveness */
+  @media (max-width: 768px) {
+    .job-posting-container {
+      padding: 15px;
+    }
+    
+    .job-posting-container h2 {
+      font-size: 20px;
+    }
+  
+    .job-posting-container button {
+      font-size: 14px;
+    }
+  }
+  

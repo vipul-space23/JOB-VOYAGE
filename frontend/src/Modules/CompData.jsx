@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './CSS/compdatamod.css';
 
 const CompData = () => {
   const [formData, setFormData] = useState({
