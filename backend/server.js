@@ -2,13 +2,17 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
-const authenticate = require('./middleware/authenticate');
 require('dotenv').config();
 
 const app = express();
-app.use(cors());
 app.use(express.json());
 app.use(cookieParser());
+
+
+app.use(cors({
+  origin: 'http://localhost:3000',
+  credentials: true 
+}));
 
 mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
@@ -17,7 +21,7 @@ mongoose.connect(process.env.MONGO_URI, {
   .catch(err => console.log(err));
 
 app.use('/api/user', require('./routes/authRoutes'));
-app.use('/api/company',authenticate, require('./routes/comRoutes'));
+app.use('/api/company', require('./routes/comRoutes'));
 app.use('/api/job', require('./routes/jobRoutes'));
 app.use('/api/application', require('./routes/appRoutes'));
 
