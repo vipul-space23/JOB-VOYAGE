@@ -1,0 +1,112 @@
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    height: 50px;
+    background-color: white;
+}
+
+
+.nav-logo h1 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-left: 45%;
+}
+
+.nav-logo span {
+    color: #0d94ee;
+}
+
+.nav-links {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+    margin-left: 7%;
+    padding: 0;
+    flex-grow: 10;
+    justify-content: flex-start;
+}
+
+.nav-links li {
+    font-size: 19px;
+    margin: 0 15px;
+    display: inline;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+}
+
+.nav-links a:hover {
+    color: #3498db;
+}
+
+.nav-actions {
+    display: flex;
+    gap: 20px;
+    margin-right: 6.5%;
+    align-items: center;
+}
+
+.nav-actions button {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #fff;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.nav-actions .signup-button {
+    background-color: rgb(233, 116, 20);
+    font-weight: bold;
+    font-size: 15px;
+    color: #fff;
+    cursor: pointer;
+    border: 2px solid rgb(233, 116, 20);
+}
+
+.nav-actions .signup-button:hover {
+    background-color: rgb(255, 83, 4);
+}
+
+.nav-actions .login-button {
+    background-color: rgb(249, 247, 246);
+    font-weight: bold;
+    font-size: 15px;
+    color: #3292f3;
+    cursor: pointer;
+    border: 2px solid #3292f3;
+}
+
+.nav-avatar {
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.popover-content {
+    padding: 10px;
+    width: 250px;
+}
+
+.popover-header {
+    display: flex;
+    align-items: center;
+}
+
+.popover-header-avatar {
+    margin-right: 10px;
+}
+
+.popover-body {
+    margin-top: 15px;
+}
+
+.popover-button {
+    width: 100%;
+    margin-top: 10px;
+}

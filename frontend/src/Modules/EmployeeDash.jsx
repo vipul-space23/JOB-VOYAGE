@@ -49,6 +49,8 @@ const FormWithSearch = () => {
     const storedImage = localStorage.getItem('uploadedImage');
     if (storedImage) {
       setImage(storedImage);
+      console.log(storedImage);
+      
     }
   }, []);
 
