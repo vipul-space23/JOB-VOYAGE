@@ -1,0 +1,124 @@
+/* Container Styling */
+.container {
+  min-width: 100vh;
+  margin: 0 30px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 4px 37px 0 rgba(0, 0, 0, 0.19); 
+  font-family: Arial, sans-serif;
+  height: 100vh; /* Make container fit the full height of the viewport */
+}
+
+/* Form Title */
+.container h2 {
+  text-align: center;
+  color: #007acc;
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Message Display */
+.container p {
+  text-align: center;
+  font-size: 14px;
+  color: green;
+  margin-bottom: 15px;
+}
+
+/* Label Styling */
+.container label {
+  display: block;
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #2f92ef; /* Apply the specified color for bold letters */
+}
+
+/* Input, Textarea, and Select Styling */
+.container input[type="text"],
+.container input[type="url"],
+.container input[type="file"],
+.container textarea {
+  width: calc(100% - 20px); /* Adjust width for padding */
+  padding: 12px; /* Increased padding */
+  margin: 10px 0; /* Added margin to separate from other elements */
+  border: 1px solid #c6e0fb; /* Border color for text fields */
+  border-radius: 5px;
+  font-size: 14px;
+  background-color: #f1faff; /* Background color for text fields */
+  transition: border 0.3s ease-in-out;
+}
+
+/* Textarea Specific Styling */
+.container textarea {
+  resize: vertical;
+  height: 100px;
+}
+
+/* Focus Effect for Inputs and Textareas */
+.container input[type="text"]:focus,
+.container input[type="url"]:focus,
+.container textarea:focus,
+.container input[type="file"]:focus {
+  outline: none;
+  border-color: #007acc; /* Change border color on focus */
+}
+
+/* Submit Button Styling */
+.container input[type="submit"] {
+  display: block;
+  width: 90%; /* Adjusted width for submit button */
+  max-width: 400px; /* Set a max-width for better appearance */
+  margin: 20px auto; /* Centered with auto margin */
+  padding: 12px;
+  background-color: #1d89e4; /* Background color for submit button */
+  color: #ffffff; /* Text color */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 16px; /* Font size */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease-in-out; /* Smooth transition for hover effect */
+}
+
+
+.container input[type="submit"]:hover {
+  background-color: #005999; /* Darker shade on hover */
+}
+
+#submit{
+  padding: 0.5rem;
+}
+
+/* Table Styling */
+.table {
+  width: 100%;
+  border-collapse: collapse; /* Merge borders */
+  border: 1px solid #c6e0fb; /* Border color for the table */
+}
+
+.table th,
+.table td {
+  border: 1px solid #c6e0fb; /* Border color for table cells */
+  padding: 10px;
+  text-align: left;
+  background-color: #f1faff; /* Background color for table cells */
+  color: #333; /* Text color for table cells */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .container {
+      padding: 15px;
+  }
+
+  .container h2 {
+      font-size: 20px;
+  }
+
+  .container input[type="submit"] {
+      font-size: 14px;
+  }
+}

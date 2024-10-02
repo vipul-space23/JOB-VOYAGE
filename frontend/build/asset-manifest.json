@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/static/css/main.4d5adee1.css",
+    "main.js": "/static/js/main.2781bc1f.js",
+    "static/js/453.2c947afd.chunk.js": "/static/js/453.2c947afd.chunk.js",
+    "static/media/infosys.png": "/static/media/infosys.03df6d1774b5dcdbd2ca.png",
+    "static/media/wipro.png": "/static/media/wipro.899c558f7be0699340a8.png",
+    "index.html": "/index.html",
+    "main.4d5adee1.css.map": "/static/css/main.4d5adee1.css.map",
+    "main.2781bc1f.js.map": "/static/js/main.2781bc1f.js.map",
+    "453.2c947afd.chunk.js.map": "/static/js/453.2c947afd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4d5adee1.css",
+    "static/js/main.2781bc1f.js"
+  ]
+}

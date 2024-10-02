@@ -1,0 +1,83 @@
+.job-dashboard {
+    min-width: 800px;
+    margin: 0 25px;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+h2 {
+    text-align: center;
+    color: #1d89e4;
+}
+
+.search-bar {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    width: 70%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f1faff; /* Background color for search input */
+}
+
+.add-job {
+    background-color: #298ae1; /* Updated button color */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-job:hover {
+    background-color: #1d89d4; /* Adjusted hover color */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 4px; /* Border radius for the table */
+    overflow: hidden; /* Ensure border radius works */
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+    background-color: #f1faff; /* Background color for table cells */
+}
+
+th {
+    background-color: #1d89e4; /* Header color */
+    color: white;
+}
+
+/* Action column styles */
+td:last-child {
+    display: flex;
+    justify-content: flex-start; /* Align edit button to the start */
+}
+
+.edit-btn {
+    background-color: #1d89e4;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.edit-btn:hover {
+    background-color: #1684d4; /* Adjusted hover color */
+}
+
+/* Hide edit applicants button */
+.edit-applicants-btn {
+    display: none;
+}

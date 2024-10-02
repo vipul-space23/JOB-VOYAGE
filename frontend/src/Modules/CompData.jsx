@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './CSS/compdatamod.css';
+import './CSS/CompData.css';
 
 const CompData = () => {
   const [formData, setFormData] = useState({
@@ -61,7 +61,6 @@ const CompData = () => {
       <h2>Register Company</h2>
       {message && <p>{message}</p>}
       <form onSubmit={handleSubmit} encType="multipart/form-data">
-        <div>
           <label htmlFor="companyName">Company Name:</label><br />
           <input 
             type="text" 
@@ -112,9 +111,10 @@ const CompData = () => {
             onChange={handleFileChange}
             required 
           /><br /><br />
-
-          <input type="submit" value="Submit" />
-        </div>
+          <div id="submit">
+          {/* Changed the value from "Submit" to "Update" */}
+          <input type="submit" value="Update" />
+          </div>
       </form>
     </div>
   );

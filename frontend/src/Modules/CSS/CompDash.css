@@ -1,0 +1,110 @@
+/* Existing CSS */
+html,
+body {
+    height: 100%;
+    margin: 0;
+    overflow-x: hidden; /* Changed to 'hidden' to avoid horizontal scrolling */
+}
+
+.compDash {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    height: 100vh; /* Full height */
+    min-width: 100vh; /* Full width */
+    margin: 0 25px; /* Center horizontally */
+    padding: 20px;
+    border: 1px solid #c6e0fb; /* Border color for the whole component */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff; /* Background color for better visibility */
+    overflow-y: auto; /* Enable scrolling if content overflows */
+}
+
+.searchContainer {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.searchBar {
+    flex: 1; /* Allow the search bar to grow */
+    padding: 10px;
+    border: 1px solid #c6e0fb; /* Border color for the text field */
+    border-radius: 5px;
+    background-color: #f1faff; /* Background color for the text field */
+    margin-right: 10px; /* Space between search bar and button */
+}
+
+.addButton {
+    padding: 10px 15px;
+    background-color: #1d89e4; /* Background color for the button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.addButton:hover {
+    background-color: #0056b3; /* Optional hover effect */
+}
+
+.companiesTable {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #c6e0fb; /* Border color for the table */
+}
+
+.companiesTable th,
+.companiesTable td {
+    border: 1px solid #c6e0fb; /* Border color for table cells */
+    padding: 10px;
+    text-align: left;
+    background-color: #f1faff; /* Background color for table cells */
+    color: #2f92ef; /* Text color for table cells */
+}
+
+.companiesTable th {
+    background-color: #f4f4f4; /* Background color for header cells */
+    font-weight: bold; /* Bolder letters */
+    color: #2f92ef; /* Text color for header */
+}
+
+.logo {
+    width: 50px; /* Adjust as needed */
+    height: 50px; /* Adjust as needed */
+    object-fit: contain; /* Maintain aspect ratio without distortion */
+}
+
+.btn-container {
+    display: flex; /* Flex container for buttons */
+    gap: 0.5rem; /* Space between buttons */
+    height: 100%;
+}
+
+.editButton,
+.deleteButton {
+    padding: 5px 10px;
+    background-color: #f1faff; /* Background color for buttons */
+    color: #359dff; /* Text color for edit button */
+    border: 1px solid #359dff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.editButton:hover,
+.deleteButton:hover {
+    background-color: #d0e4f1; /* Slightly darker shade on hover */
+}
+
+/* Optional: Responsive adjustments */
+@media (max-width: 600px) {
+    .searchContainer {
+        flex-direction: column; /* Stack the search bar and button */
+        align-items: stretch; /* Stretch to fill available width */
+    }
+
+    .searchBar {
+        margin-right: 0; /* Remove right margin */
+        margin-bottom: 10px; /* Add margin below search bar */
+    }
+}
