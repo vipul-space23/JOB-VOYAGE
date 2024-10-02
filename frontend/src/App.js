@@ -7,6 +7,7 @@ import Navigation from "./Modules/Navigation";
 import Signup from "./Modules/Signup";
 import Login from "./Modules/Login";
 import JobData from './Modules/JobData';
+import Applicant from './Modules/Applicant';
 
 import CompData from "./Modules/CompData";
 import Home from "./Modules/Home";
@@ -42,6 +43,8 @@ function App() {
           <Route path="/Jobclick" element={<Jobclick/>} />
           <Route path="/JobPosting" element={<JobPosting/>} />
           <Route path="/JobData" element={<JobData/>} />
+          <Route path="/Applicant" element={<Applicant/>} />
+          
 
         
 
