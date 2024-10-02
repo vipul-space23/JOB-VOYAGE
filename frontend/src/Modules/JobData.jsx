@@ -27,7 +27,7 @@ const JobData = () => {
     e.preventDefault();
     console.log('Form Data Submitted:', formData);
     try {
-        const response = await axios.post('http://localhost:5000/api/jobs/post', formData, {
+        const response = await axios.post('http://localhost:5000/api/job/post', formData, {
           headers: {
             Authorization: `Bearer ${localStorage.getItem('token')}` // Use token for authentication if needed
           }
