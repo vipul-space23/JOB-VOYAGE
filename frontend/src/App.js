@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navigation from "./Modules/Navigation";
 import Signup from "./Modules/Signup";
 import Login from "./Modules/Login";
+import JobData from './Modules/JobData';
 
 import CompData from "./Modules/CompData";
 import Home from "./Modules/Home";
@@ -40,6 +41,8 @@ function App() {
           <Route path="/compdash" element={<CompDash />} />
           <Route path="/Jobclick" element={<Jobclick/>} />
           <Route path="/JobPosting" element={<JobPosting/>} />
+          <Route path="/JobData" element={<JobData/>} />
+
         
 
         </Routes>

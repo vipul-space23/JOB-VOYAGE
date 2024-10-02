@@ -1,0 +1,79 @@
+/* Overall form container */
+.form-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Heading styling */
+  h2 {
+    text-align: center;
+    color: #1e88e5;
+    margin-bottom: 20px;
+  }
+  
+  /* Form container that splits into two columns */
+  .form-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  
+  /* Each column in the form */
+  .form-column {
+    flex: 1;
+  }
+  
+  /* Form field container for individual inputs */
+  .form-field {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 8px;
+    color: #1e88e5;
+    font-weight: bold;
+  }
+  
+  /* Form input, textarea, and select styling */
+  input[type="text"],
+  input[type="number"],
+  textarea,
+  select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #1e88e5;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+    background-color: #f1faff;
+    color: #333;
+  }
+  
+  textarea {
+    resize: vertical;
+    height: 80px;
+  }
+  
+  /* Button styling */
+  button {
+    width: 100%;
+    padding: 10px;
+    background-color: #1e88e5;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #1565c0;
+  }
+  

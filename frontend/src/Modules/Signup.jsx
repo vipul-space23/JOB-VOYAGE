@@ -38,7 +38,7 @@ const Signup = () => {
             data.append('file', file);
         }
         try {
-            const res = await axios.post('http://localhost:5000/api/user/register', data, {
+            const res = await axios.post('http://localhost:5000/api/user/post', data, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 },
